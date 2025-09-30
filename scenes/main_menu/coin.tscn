@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://n7xlx5kk72uw"]
+
+[ext_resource type="SpriteFrames" uid="uid://bws4wdj70x006" path="res://scenes/level/coin/animations.tres" id="1_ied0f"]
+
+[node name="Coin" type="AnimatedSprite2D"]
+texture_filter = 1
+scale = Vector2(1.6, 1.6)
+sprite_frames = ExtResource("1_ied0f")

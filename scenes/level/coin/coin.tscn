@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cryita3bgpgax"]
+
+[ext_resource type="Script" uid="uid://bbgtt1lion2r0" path="res://scripts/level/coin.gd" id="1_yy5yo"]
+[ext_resource type="SpriteFrames" uid="uid://bws4wdj70x006" path="res://scenes/level/coin/animations.tres" id="2_ay06b"]
+[ext_resource type="AudioStream" uid="uid://b38n3x83f7uox" path="res://sounds/coin.wav" id="3_dm5tv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5i0tg"]
+size = Vector2(22, 9)
+
+[node name="Coin" type="Area2D" groups=["coins"]]
+collision_layer = 2
+input_pickable = false
+script = ExtResource("1_yy5yo")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.6, 1.6)
+sprite_frames = ExtResource("2_ay06b")
+frame_progress = 0.18773636
+centered = false
+offset = Vector2(0, -5.695)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 13.5)
+shape = SubResource("RectangleShape2D_5i0tg")
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_dm5tv")
+volume_db = -4.94
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="Sound" to="." method="_on_sound_finished"]

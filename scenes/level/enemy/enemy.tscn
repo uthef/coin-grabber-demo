@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8l1w6xtc0gjb"]
+
+[ext_resource type="Script" uid="uid://cv4h5nwspem7k" path="res://scripts/level/enemy.gd" id="1_trxmi"]
+[ext_resource type="SpriteFrames" uid="uid://cod8gcbhpy3sw" path="res://scenes/level/enemy/animations.tres" id="2_cymc8"]
+[ext_resource type="SpriteFrames" uid="uid://be4brswa57plt" path="res://scenes/level/enemy/exclamation_mark_animation.tres" id="2_ib3xu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tf2q7"]
+radius = 12.0
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 4
+collision_mask = 5
+motion_mode = 1
+script = ExtResource("1_trxmi")
+metadata/_edit_group_ = true
+
+[node name="ExclamationMark" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 5
+texture_filter = 1
+position = Vector2(0, -50)
+scale = Vector2(0.02, 0.02)
+sprite_frames = ExtResource("2_ib3xu")
+frame_progress = 0.80316937
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 20.0
+path_postprocessing = 2
+radius = 100.0
+max_speed = 150.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.9062495, 1.9687495)
+sprite_frames = ExtResource("2_cymc8")
+animation = &"idle_down"
+offset = Vector2(0, -5.375)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("CapsuleShape2D_tf2q7")
+
+[connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

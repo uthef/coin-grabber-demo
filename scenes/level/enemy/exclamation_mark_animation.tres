@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://be4brswa57plt"]
+
+[ext_resource type="Texture2D" uid="uid://cbr0xx8s2llbn" path="res://textures/enemy/exclamation_mark.png" id="1_vat5q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u00tb"]
+atlas = ExtResource("1_vat5q")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a417h"]
+atlas = ExtResource("1_vat5q")
+region = Rect2(1024, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tll5b"]
+atlas = ExtResource("1_vat5q")
+region = Rect2(2048, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxx1v"]
+atlas = ExtResource("1_vat5q")
+region = Rect2(3072, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcou7"]
+atlas = ExtResource("1_vat5q")
+region = Rect2(4096, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfyn8"]
+atlas = ExtResource("1_vat5q")
+region = Rect2(5120, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5fal"]
+atlas = ExtResource("1_vat5q")
+region = Rect2(6144, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8cyl"]
+atlas = ExtResource("1_vat5q")
+region = Rect2(7168, 0, 1024, 1024)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u00tb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a417h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tll5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxx1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcou7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfyn8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5fal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8cyl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
