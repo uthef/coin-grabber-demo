@@ -75,4 +75,13 @@ func get_dict() -> Dictionary:
 
 
 func is_valid() -> bool:
-	return _dict != null and _dict.keys().size() > 0
+	var valid_dict := _dict != null and _dict.keys().size() > 0
+
+	if not valid_dict:
+		return false
+	
+	var valid_coin_count :=  coins_positions.size() > 0 and max_coin_count > 0
+	var valid_enemy_count := enemies_positions.size() > 0
+	var valid_layers := obstacle_layer_data.size() > 0 and bg_layer_data.size() > 0
+
+	return valid_coin_count and valid_enemy_count and valid_layers
